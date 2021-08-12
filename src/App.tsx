@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React  from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Main from "./components/layout/Main";
 import Login from './components/layout/Login';
 import { RootState } from './store';
@@ -13,7 +13,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/">
+          { isLogin ? <Main/> : <Redirect to="/login" /> }
+        </Route>
         <Route exact path="/login" component={Login} />
       </Switch>
     </BrowserRouter>
