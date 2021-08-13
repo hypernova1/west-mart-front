@@ -28,10 +28,10 @@ const auth = createSlice({
       state.isLogin = false;
       state.userInfo = {} as UserInfo;
       return state;
-    }
+    },
   }
 });
 
-export const { login } = auth.actions;
+export const { login, logout } = auth.actions;
 
 export default auth;

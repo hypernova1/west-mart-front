@@ -1,9 +1,11 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { LoginForm } from '../../types/auth';
 import { login } from '../../actions/auth';
+import { useDispatch } from 'react-redux';
 
 export default function Login() {
 
+  const dispatch = useDispatch();
   const [loginForm, setLoginForm] = useState<LoginForm>({
     email: '',
     password: '',
@@ -17,8 +19,8 @@ export default function Login() {
   }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    await login(loginForm);
-    console.log(1);
+    e.preventDefault();
+    await dispatch(login(loginForm));
   }
 
   useEffect(() => {
@@ -27,10 +29,7 @@ export default function Login() {
   return (
     <div>
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit(e);
-      }}
+        onSubmit={handleSubmit}
       >
         <div>
           email: <input type="text" name="email" onChange={handleChange} />
