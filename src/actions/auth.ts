@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export const login = (loginForm: LoginForm): AppThunk => async (dispatch: AppDispatch) => {
   try {
-    const response = await axios.post('http://localhost:3001/auth/login', loginForm);
+    const response = await axios.post('http://172.30.14.43:3001/auth/login', loginForm);
     const token = response.data.token as string;
     const userInfo = {
       ...response.data.userInfo,
@@ -32,7 +32,7 @@ export const verify = ():AppThunk => async (dispatch: AppDispatch) => {
   try {
     const token = localStorage.getItem('token');
 
-    const response = await axios.post('http://localhost:3001/auth/verify', {}, {
+    const response = await axios.post('http://172.30.14.43:3001/auth/verify', {}, {
       headers: {
         'Authorization': `bearer ${token}`,
       }
