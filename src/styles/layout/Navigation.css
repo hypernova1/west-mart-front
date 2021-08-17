@@ -1,0 +1,11 @@
+.side-bar {
+    width: 240px;
+    background: black;
+    color: white;
+    transition: transform ease-in-out 0.5s, width 0.1s;
+}
+
+.hidden {
+    transform: translate(-240px);
+    width: 0;
+}
