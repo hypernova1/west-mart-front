@@ -1,15 +1,11 @@
 import { AppDispatch } from '../store';
-import axios from 'axios';
 import PostType from '../types/post';
 import { getPosts } from '../store/reducers/post';
+import Network from '../utils/network';
 
 export const getPostList = (page: number, keyword: string) => async (dispatch: AppDispatch) => {
   try {
-    const response = await axios.get(`http://172.30.14.43:3001/post?pageNo=${page}&keyword=${keyword}`, {
-      headers: {
-        authorization: `bearer ${localStorage.getItem('token')}`
-      }
-    });
+    const response = await Network.get<PostType>(`${process.env.REACT_APP_API_URL}/post?pageNo=${page}&keyword=${keyword}`);
 
     const { postList, isExistNextPage } = response.data;
 

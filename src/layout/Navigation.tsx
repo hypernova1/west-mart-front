@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store';
 import { CategoryType } from '../types/category';
 import { getCategoryList } from '../actions/category';
-import category from '../store/reducers/category';
 
 interface NavigationProps {
   open: boolean,

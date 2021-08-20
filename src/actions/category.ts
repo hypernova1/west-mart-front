@@ -1,15 +1,11 @@
 import { AppDispatch } from '../store';
-import axios from 'axios';
 import { getCategories } from '../store/reducers/category';
 import { CategoryType } from '../types/category';
+import Network from '../utils/network';
 
 export const getCategoryList = () => async (dispatch: AppDispatch) => {
   try {
-    const response = await axios.get(`http://172.30.14.43:3001/category`, {
-      headers: {
-        authorization: `bearer ${localStorage.getItem('token')}`
-      }
-    });
+    const response = await Network.get(`${process.env.REACT_APP_API_URL}/category`)
 
     const { data } = response;
 
