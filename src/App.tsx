@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from './store';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { verify } from './actions/auth';
 import Main from './layout/Main';
+import AlertDialog from './components/alerts/AlertDialog';
 
 export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -32,6 +33,7 @@ export default function App() {
         </Route>
         { isLogin && <Route path="/*" component={Main} /> }
       </Switch>
+      <AlertDialog />
     </BrowserRouter>
   );
 }
