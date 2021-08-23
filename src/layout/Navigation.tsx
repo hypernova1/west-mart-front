@@ -29,7 +29,11 @@ export default function Navigation({ open }: NavigationProps) {
       <div>
         {
           categories.map((category) => {
-            return <Link key={category.name} to={`/post/${category.name}`}>{category.name}</Link>
+            return <Link
+              key={category.name}
+              to={`/post/${category.name}`}>
+              {category.name}
+            </Link>
           })
         }
       </div>

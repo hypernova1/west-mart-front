@@ -3,9 +3,9 @@ import PostType from '../types/post';
 import { getPosts } from '../store/reducers/post';
 import Network from '../utils/network';
 
-export const getPostList = (page: number, keyword: string) => async (dispatch: AppDispatch) => {
+export const getPostList = (category: string, page: number, keyword: string) => async (dispatch: AppDispatch) => {
   try {
-    const response = await Network.get<PostType>(`${process.env.REACT_APP_API_URL}/post?pageNo=${page}&keyword=${keyword}`);
+    const response = await Network.get<PostType>(`${process.env.REACT_APP_API_URL}/category/${category}/post?pageNo=${page}&keyword=${keyword}`);
 
     const { postList, isExistNextPage } = response.data;
 
