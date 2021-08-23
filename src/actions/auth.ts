@@ -32,7 +32,7 @@ export const verify = ():AppThunk => async (dispatch: AppDispatch) => {
   try {
     const token = localStorage.getItem('token');
 
-    const response = await Network.post(`${process.env.REACT_APP_API_URL}//auth/verify`, {});
+    const response = await Network.post(`${process.env.REACT_APP_API_URL}/auth/verify`, {});
 
     if (response.status === 200) {
       dispatch(_login(response.data));

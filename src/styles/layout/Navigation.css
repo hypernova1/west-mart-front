@@ -1,8 +1,8 @@
 .side-bar {
     width: 240px;
-    background: black;
-    color: white;
     transition: transform ease-in-out 0.5s, width 0.1s;
+    flex-direction: column;
+    height: 100%;
 }
 
 .hidden {
