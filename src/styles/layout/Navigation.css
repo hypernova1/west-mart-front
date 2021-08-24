@@ -1,11 +1,21 @@
 .side-bar {
+    visibility: visible;
     width: 240px;
-    transition: transform ease-in-out 0.5s, width 0.1s;
     flex-direction: column;
     height: 100%;
 }
 
 .hidden {
-    transform: translate(-240px);
+    visibility: hidden;
     width: 0;
+}
+
+.toggle-button {
+    position: fixed;
+    top: 10px;
+    left: 240px;
+}
+
+.toggle-hidden {
+    transform: translate(-230px);
 }

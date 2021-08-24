@@ -7,6 +7,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function Main() {
+
   const [open, setOpen] = useState<boolean>(true);
 
   const handleClick = () => {
@@ -18,7 +19,7 @@ export default function Main() {
       <Navigation open={open} />
       <div className="wrapper flexbox-item-grow">
         <header className="header">
-          <button onClick={handleClick}>toggle</button>
+          <label htmlFor="slide" onClick={handleClick}>☰</label>
           Header
         </header>
         <main className="fill-area-content flexbox-item-grow">
