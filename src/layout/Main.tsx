@@ -7,19 +7,20 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 
 export default function Main() {
-
   const [open, setOpen] = useState<boolean>(true);
 
   const handleClick = () => {
     setOpen(!open);
-  }
+  };
 
   return (
     <div className="container">
       <Navigation open={open} />
       <div className="wrapper flexbox-item-grow">
         <header className="header">
-          <label htmlFor="slide" onClick={handleClick}>☰</label>
+          <label htmlFor="slide" onClick={handleClick}>
+            ☰
+          </label>
           Header
         </header>
         <main className="fill-area-content flexbox-item-grow">

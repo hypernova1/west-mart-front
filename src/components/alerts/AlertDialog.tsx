@@ -9,21 +9,21 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-
 export default function AlertDialog() {
-  const dispatch = useDispatch<AppDispatch>()
-  const { open, title, message, callback } = useSelector<RootState, DialogState>(
-    (state) => state.dialog
-  )
+  const dispatch = useDispatch<AppDispatch>();
+  const { open, title, message, callback } = useSelector<
+    RootState,
+    DialogState
+  >((state) => state.dialog);
 
   const handleClose = () => {
-    dispatch(closeDialog())
-  }
+    dispatch(closeDialog());
+  };
 
   const handleAgree = async () => {
-    await callback()
-    handleClose()
-  }
+    await callback();
+    handleClose();
+  };
 
   return (
     <Dialog
@@ -47,5 +47,5 @@ export default function AlertDialog() {
         </Button>
       </DialogActions>
     </Dialog>
-  )
+  );
 }

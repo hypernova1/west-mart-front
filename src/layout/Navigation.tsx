@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/layout/Navigation.css'
+import '../styles/layout/Navigation.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store';
 import { CategoryType } from '../types/category';
@@ -11,36 +11,31 @@ interface NavigationProps {
 }
 
 export default function Navigation({ open }: NavigationProps) {
-
   const hidden = open ? '' : 'hidden';
   const dispatch = useDispatch<AppDispatch>();
-  const categories = useSelector<RootState, CategoryType[]>((state) => state.category.categories)
+  const categories = useSelector<RootState, CategoryType[]>(
+    (state) => state.category.categories,
+  );
 
   useEffect(() => {
     dispatch(getCategoryList());
     console.log(categories);
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <div>
-
       <div className={'side-bar side-bar-transform ' + hidden}>
+        <div>SideBar</div>
         <div>
-          SideBar
-        </div>
-        <div>
-          {
-            categories.map((category) => {
-              return <Link
-                key={category.name}
-                to={`/post/${category.name}`}>
+          {categories.map((category) => {
+            return (
+              <Link key={category.name} to={`/post/${category.name}`}>
                 {category.name}
               </Link>
-            })
-          }
+            );
+          })}
         </div>
       </div>
     </div>
-  )
+  );
 }
-

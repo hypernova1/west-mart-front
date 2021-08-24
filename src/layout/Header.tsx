@@ -11,15 +11,13 @@ export default function Header() {
   const handleClick = () => {
     dispatch(logout());
     history.push('/login');
-  }
+  };
   return (
     <header>
       <h2>Header</h2>
       <div>
-        <button
-          onClick={handleClick}
-        >로그아웃</button>
+        <button onClick={handleClick}>로그아웃</button>
       </div>
     </header>
-  )
+  );
 }

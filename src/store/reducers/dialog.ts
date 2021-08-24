@@ -5,14 +5,14 @@ export type DialogState = {
   title: string;
   message: string;
   callback: any;
-}
+};
 
 const initialState: DialogState = {
   open: false,
   title: '',
   message: '',
   callback: undefined,
-}
+};
 
 const dialog = createSlice({
   name: 'dialog',
@@ -26,7 +26,7 @@ const dialog = createSlice({
       state = initialState;
       return state;
     },
-  }
+  },
 });
 
 export const { openDialog, closeDialog } = dialog.actions;

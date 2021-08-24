@@ -5,19 +5,24 @@ import Network from '../utils/network';
 
 export const getCategoryList = () => async (dispatch: AppDispatch) => {
   try {
-    const response = await Network.get(`${process.env.REACT_APP_API_URL}/category`)
+    const response = await Network.get(
+      `${process.env.REACT_APP_API_URL}/category`,
+    );
 
     const { data } = response;
 
-    const categories = data.map((category: any) => ({
-      id: category.id,
-      name: category.name,
-      managerId: category.managerId,
-      sequence: category.sequence,
-    } as CategoryType));
+    const categories = data.map(
+      (category: any) =>
+        ({
+          id: category.id,
+          name: category.name,
+          managerId: category.managerId,
+          sequence: category.sequence,
+        } as CategoryType),
+    );
 
     dispatch(getCategories({ categories }));
   } catch (e) {
     console.log(e);
   }
-}
+};

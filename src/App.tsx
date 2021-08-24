@@ -10,7 +10,7 @@ import AlertDialog from './components/alerts/AlertDialog';
 export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export default function App() {
-  const { isLogin, userInfo } = useTypedSelector((state) => state.auth)
+  const { isLogin, userInfo } = useTypedSelector((state) => state.auth);
 
   const dispatch = useDispatch<AppDispatch>();
   const token = localStorage.getItem('token');
@@ -21,7 +21,6 @@ export default function App() {
     }
   }, [isLogin, token, dispatch]);
 
-
   return (
     <BrowserRouter>
       <Switch>
@@ -29,9 +28,9 @@ export default function App() {
           <Redirect to="/login" />
         </Route>
         <Route exact path="/login">
-          { isLogin ? <Redirect to="/home" /> : <Login /> }
+          {isLogin ? <Redirect to="/home" /> : <Login />}
         </Route>
-        { isLogin && <Route path="/*" component={Main} /> }
+        {isLogin && <Route path="/*" component={Main} />}
       </Switch>
       <AlertDialog />
     </BrowserRouter>

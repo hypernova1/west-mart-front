@@ -8,5 +8,4 @@ interface MessageAlertProps {
 
 export default function MessageAlert() {
   const dipatch = useDispatch<AppDispatch>();
-
 }

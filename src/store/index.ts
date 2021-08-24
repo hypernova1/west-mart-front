@@ -1,4 +1,9 @@
-import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit';
+import {
+  Action,
+  combineReducers,
+  configureStore,
+  ThunkAction,
+} from '@reduxjs/toolkit';
 import auth from './reducers/auth';
 import post from './reducers/post';
 import category from './reducers/category';

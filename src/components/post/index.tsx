@@ -11,5 +11,5 @@ export default function Post() {
       <Route exact path="/post/create" component={PostForm} />
       <Route exact path="/post/:name/:id" component={PostDetail} />
     </>
-  )
+  );
 }

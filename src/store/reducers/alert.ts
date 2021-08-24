@@ -5,13 +5,13 @@ type AlertState = {
   open: boolean;
   type: AlertType;
   message: string;
-}
+};
 
 const initialState: AlertState = {
   open: false,
   type: AlertType.INFO,
   message: '',
-}
+};
 
 const alert = createSlice({
   name: 'alert',
@@ -25,7 +25,7 @@ const alert = createSlice({
       state = initialState;
       return state;
     },
-  }
+  },
 });
 
 export const { login, logout } = alert.actions;

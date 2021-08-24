@@ -4,7 +4,7 @@ import { UserInfo } from '../../types/auth';
 type AuthState = {
   isLogin: boolean;
   userInfo: UserInfo;
-}
+};
 
 const initialState: AuthState = {
   isLogin: false,
@@ -13,7 +13,7 @@ const initialState: AuthState = {
     nickname: '',
     role: '',
   } as UserInfo,
-}
+};
 
 const auth = createSlice({
   name: 'auth',
@@ -29,7 +29,7 @@ const auth = createSlice({
       state.userInfo = {} as UserInfo;
       return state;
     },
-  }
+  },
 });
 
 export const { login, logout } = auth.actions;
