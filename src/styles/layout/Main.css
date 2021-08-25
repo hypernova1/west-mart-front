@@ -27,9 +27,6 @@
 
 }
 .fill-area-content {
-    background: rgba(0, 0, 0, .3);
-    border: 1px solid #000000;
-
-    /* Needed for when the area gets squished too far and there is content that can't be displayed */
+    padding: 10px;
     overflow: auto;
 }

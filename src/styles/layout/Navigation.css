@@ -1,8 +1,18 @@
 .side-bar {
     visibility: visible;
-    width: 240px;
+    width: 150px;
     flex-direction: column;
     height: 100%;
+    border-right: 0.06rem solid #e7eaec;
+}
+
+.side-bar-header {
+    height: 60px;
+    padding: 20px;
+    font-size: 1.2rem;
+    margin: auto;
+    font-weight: bold;
+    border-bottom: 0.06rem solid #e7eaec;
 }
 
 .hidden {
@@ -10,10 +20,23 @@
     width: 0;
 }
 
+.category {
+    padding: 20px;
+}
+
+.select-category {
+    font-weight: bold;
+}
+
+.category-item {
+    all: unset;
+    cursor: pointer;
+}
+
 .toggle-button {
     position: fixed;
     top: 10px;
-    left: 240px;
+    left: 150px;
 }
 
 .toggle-hidden {

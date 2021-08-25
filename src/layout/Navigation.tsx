@@ -16,20 +16,24 @@ export default function Navigation({ open }: NavigationProps) {
   const categories = useSelector<RootState, CategoryType[]>(
     (state) => state.category.categories,
   );
+  const [selected, setSelected] = useState(0);
 
   useEffect(() => {
     dispatch(getCategoryList());
-    console.log(categories);
-  }, [dispatch]);
+  }, [selected, dispatch]);
 
   return (
     <div>
       <div className={'side-bar side-bar-transform ' + hidden}>
-        <div>SideBar</div>
-        <div>
+        <div className="side-bar-header">서서울상회</div>
+        <div className="category">
           {categories.map((category) => {
             return (
-              <Link key={category.name} to={`/post/${category.name}`}>
+              <Link
+                key={category.name}
+                className={'category-item ' + (category.id === selected) && 'category-item'}
+                to={`/post/${category.name}`}
+              >
                 {category.name}
               </Link>
             );
