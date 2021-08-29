@@ -1,5 +1,6 @@
 import React from 'react';
+import '../styles/layout/Footer.css';
 
 export default function Footer() {
-  return <footer style={{ backgroundColor: '#e7eaec', height: '30px', lineHeight: '30px', textAlign: 'center' }}>Footer</footer>;
+  return <footer className="footer">Footer</footer>;
 }
