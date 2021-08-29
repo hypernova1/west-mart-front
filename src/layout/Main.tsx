@@ -24,7 +24,7 @@ export default function Main() {
         </header>
         <main className="fill-area-content flexbox-item-grow">
           <Route path="/home" component={Home} />
-          <Route path="/post" component={Post} />
+          <Route path="/category" component={Post} />
         </main>
         <Footer />
       </div>

@@ -7,7 +7,7 @@ import PostForm from './PostForm';
 export default function Post() {
   return (
     <>
-      <Route exact path="/post/:name" component={PostList} />
+      <Route exact path="/category/:categoryId/post" component={PostList} />
       <Route exact path="/post/create" component={PostForm} />
       <Route exact path="/post/:name/:id" component={PostDetail} />
     </>

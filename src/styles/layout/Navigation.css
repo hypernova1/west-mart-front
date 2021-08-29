@@ -1,6 +1,6 @@
 .side-bar {
     visibility: visible;
-    width: 150px;
+    width: 180px;
     flex-direction: column;
     height: 100%;
     border-right: 0.06rem solid #e7eaec;
@@ -24,13 +24,17 @@
     padding: 20px;
 }
 
-.select-category {
-    font-weight: bold;
+.category-item-wrapper {
+    margin: 10px;
 }
 
 .category-item {
     all: unset;
     cursor: pointer;
+}
+
+.selected-item {
+    font-weight: 600;
 }
 
 .toggle-button {
